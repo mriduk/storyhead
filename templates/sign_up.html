@@ -1,0 +1,168 @@
+<html>
+<head>
+<style>
+:root {
+  --white: #fff;
+  --accent-color: #b5838d;
+  --dark-accent-color: #a6757f;
+  --main-color: #6d6875;
+  --dark-main-color: #56505f;
+}
+.wave {
+  display: block;
+  animation: waving 3s infinite;
+}
+
+@keyframes waving {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100 {
+    transform: rotate( 30deg);
+  }
+}
+
+body {
+  background: rgb(255, 180, 162);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 180, 162, 1) 0%,
+    rgba(255, 180, 162, 1) 53%,
+    rgba(229, 152, 155, 1) 100%
+  );
+  color: var(--main-color);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+a {
+  text-align: center;
+}
+
+button {
+  font-size: 0.8em;
+  color: var(--white);
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 5px;
+  border-width: 0px;
+  text-transform: uppercase;
+}
+
+input {
+  padding: 1em;
+  border-radius: 0px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 95%);
+}
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  background-color: var(--white);
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-top: 10px solid var(--accent-color);
+}
+
+.signup {
+  background-color: var(--accent-color);
+}
+.signup:hover {
+  background-color: var(--dark-accent-color);
+}
+
+.login {
+  background-color: var(--main-color);
+}
+
+.login:hover {
+  background-color: var(--dark-main-color);
+}
+
+.disclaimer {
+  font-size: 0.9em;
+}
+
+a {
+  color: var(--main-color);
+}
+
+a:hover {
+  color: var(--dark-main-color);
+}
+
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<title>
+STORYHEAD
+</title>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+
+
+
+
+
+  <div class="container">
+    <h1>Welcome Back! <span class="wave">👋🏾</span></h1>
+
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary black" type="submit">Sign up</button>
+  </form>
+
+    
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+
+
+   <a class="btn btn-primary black" href="{% url 'login' %}" role="button">LOG IN</a>
+ {% endcomment %}
+
+
+
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+{% comment %} <style>
+/* css reset  */
+
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body,
+html {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(http://getwallpapers.com/wallpaper/full/0/4/c/122144.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+}
+
+.box {
+    /* filter: blur(2px); */
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    /* border: 2px solid red; */
+    /* margin: 20px auto;
+    padding: 14px 10px; */
+    text-align: center;
+    color: black;
+    background-color: black;
+    border-radius: 5px;
+    opacity: 80%;
+    background: linear-gradient(45deg, #212121, #757575);
+    /* z-index: -1; */
+    box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 0.7);
+}
+
+.box h1 {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* z-index: 1; */
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    width: 12rem;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    outline: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.box input[type="submit"] {
+    width: 10rem;
+    border: 2px solid rgb(0, 255, 224);
+    border-radius: 23px;
+    text-align: center;
+    margin: auto;
+    /* margin-bottom: 10px; */
+    padding: 10px;
+    outline: none;
+    background: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.box input[type="submit"]:hover {
+    background-color: transparent;
+    color: aqua;
+    transition: 0.2s;
+    box-shadow: 0px 0px 20px 3px rgb(0, 255, 224);
+}
+
+.box input[type="submit"]:focus {
+    background-color: transparent;
+    color: aqua;
+    transition: 0.2s;
+    box-shadow: 0px 0px 20px 3px rgb(0, 255, 224);
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    border: 2px solid rgb(0, 255, 224);
+    box-shadow: 0px 0px 20px 1px rgb(0, 255, 224);
+    transition: 0.2s;
+}
+
+@media screen and (max-width:800px) {
+    .box {
+        height: 17rem;
+        width: 15rem;
+    }
+    .box input[type="text"],
+    .box input[type="password"] {
+        width: 8rem;
+    }
+    .box input[type="submit"] {
+        width: 6rem;
+        font-size: .61rem;
+    }
+    .box h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .box {
+        height: 18rem;
+        width: 12rem;
+    }
+    .box input[type="text"],
+    .box input[type="password"] {
+        width: 6rem;
+        padding: 0.5rem;
+        font-size: 0.63rem;
+    }
+    .box input[type="submit"] {
+        width: 5rem;
+        height: 2rem;
+        font-size: .51rem;
+    }
+    .box h1 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:200px) {
+    .box {
+        height: 20rem;
+        width: 15rem;
+    }
+    .box input[type="text"],
+    .box input[type="password"] {
+        width: 3.8rem;
+        /* padding: 0.4rem; */
+        margin-top: 0.2rem;
+    }
+    .box input[type="submit"] {
+        width: 3.6rem;
+        font-size: .29rem;
+    }
+    .box h1 {
+        font-size: 1rem;
+    }
+}
+</style> {% endcomment %}
+
+
+ <style>
+      
+    body {
+    animation: fadeOut 2s;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: rgb(255, 98, 70);
+    background: url("https://papers.co/wallpaper/papers.co-vk55-android-lollipop-material-design-pattern-36-3840x2400-4k-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 760px;
+}
+
+#content {
+    margin-top:120px;
+    margin-bottom: 120px;
+    align-content: center;
+    justify-content: center;
+}
+#card2{
+   width: 300px;
+    height: 500px;
+     align-content: center;
+    justify-content: center;
+    display: flex;
+    position:left;
+
+}
+#card {
+    display: flex;
+    width: 500px;
+    min-height: 500px;
+    background: rgb(255, 255, 255);
+    border: 10pt;
+    border-radius: 8pt;
+    align-content: center;
+    justify-content: center;
+    
+
+}
+
+
+#text {
+    
+    
+    font-size: 30px;
+    font-family: "Indie Flower";
+    
+}
+#links {
+    display: inline-flex;
+    position: absolute;
+    top: 580px;
+}
+.link {
+    height: 28px; 
+    width: 28px;
+    margin: 4px;
+}
+.link:hover {
+    animation: fadeIn 0.7s;
+}
+#first {
+    background: url("https://image.flaticon.com/icons/svg/733/733609.svg");
+    background-size: cover;
+    margin: 10px;
+
+}
+#second {
+    background: url("https://image.flaticon.com/icons/svg/2111/2111341.svg");
+    background-size: cover;
+    margin: 10px;
+}
+#third {
+    background: url("https://image.flaticon.com/icons/svg/2089/2089181.svg");
+    background-size: cover;
+    margin: 10px;
+}
+@keyframes fadeIn {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ } 
+ @keyframes fadeOut {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+
+
+
+      </style>
+
+
+
+<title>
+STORYHEAD
+</title>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+ 
+<div id="content">
+    <div class="card text-center">
+        
+        
+        <div class="container">
+         <form  method="post">
+             {% csrf_token %}
+
+             <div class="card-header">
+            <div id="textbox">
+            <div id="text">You can login here </div>
+        </div>
+        </div>
+
+        <div class="card-body">
+        <div>
+            <label for="username">Enter Username:</label>  
+             {{ form.username}}        
+            </div>
+            <div>
+        
+            <label for="password">Enter password:</label>  
+            {{ form.password}}
+            </div>
+            <button class="btn waves-effect waves-light" method="POST" type="submit" name="action">Submit</button>
+            </div>
+           </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% comment %} <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div> {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %} <form class="box" method="post">
+    {% csrf_token %}
+        <h1>Login</h1>
+        <div>
+           
+            <label for="username">Enter Username:</label>  
+             {{ form.username}}        
+            
+        <div>
+            <label for="password">Enter password:</label>  
+            {{ form.password}}
+        <button class="btn waves-effect waves-light" method="POST" type="submit" name="action">Submit
+
+  </button>
+    </form> {% endcomment %}
+
+
+
+
+
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

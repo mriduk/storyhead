@@ -1,0 +1,293 @@
+<html>
+<head>
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: square;
+}
+a{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+#main{
+  padding: 50px;
+  width: 80%;
+  margin: 0 auto;
+}
+.p-title{
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+#title{
+  text-align: center;
+  font-size: 6rem;
+  font-family: 'Tangerine', cursive;
+  padding-bottom: 30px;
+}
+#title::before{
+  content: '';
+  width: 30%;
+  border: 1px solid #000;
+  display: flex;
+  position: relative;
+  top: 50px;
+}
+#title::after{
+  content: '';
+  width: 30%;
+  border: 1px solid #000;
+  display: flex;
+  position: relative;
+  top: -52px;
+  left: 70%;
+}
+#img-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#img-div img{
+  width:60%;
+  padding: 50px 0 50px 0;
+}
+#img-caption{
+  font-style: italic;
+  font-size: 1.5rem;
+  padding-bottom: 100px;
+}
+span{
+  font-weight: bold;
+}
+#tribute-info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.p1{
+  width: 95%;
+  font-size: 1.2rem;
+}
+.line{
+  border: 1px solid #000;
+  display: flex;
+  position: relative;
+}
+.list{
+  width: 40%;
+  font-size: 1.2rem;
+}
+span:nth-child(2){
+  color: #848181;
+  font-weight:initial;
+}
+footer{
+  background-color: #f7f7f7;
+  padding-top: 100px;
+  margin-top: 100px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer{
+  position: relative;
+  bottom: 40px;
+}
+@media all and (max-width: 1260px){
+  #title::before{
+  border: none;
+  }
+#title::after{
+  border: none;
+  }
+}
+@media all and (max-width: 1024px){
+  .p1, .list{
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 840px){
+  .p-title{
+    font-size: 1rem;
+  }
+  #title{
+    font-size: 3rem;
+  }
+  #img-caption{
+    font-size: 1rem;
+    padding-bottom: 50px;
+  }
+  #tribute-info{
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+  .p1{
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .line{
+    display: none;
+  }
+  .list{
+    width: 100%;
+    white-space: pre-wrap;
+  }
+  footer{
+    margin-top: 0;
+  }
+  #img-div img{
+    width: 80%;
+  }
+}
+@media all and (max-width: 600px){
+  .p-title{
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+  }
+  #img-div img{
+    width: 100%;
+  }
+  #tribute-link{
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Tangerine&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+
+  
+  <script type = "text/JavaScript">
+         <!--
+            function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
+         //-->
+      </script>
+ 
+ 
+ <title>
+STORYHEAD
+</title>
+
+</head>
+<body onload = "JavaScript:AutoRefresh(5000);">
+ 
+ 
+ {% comment %} <form action="{% url 'count_reader' story.story_id %}" method="post"> 
+
+  {% csrf_token %}
+  <section class="section-a">
+      <div class="container">
+        <div>
+        
+         
+          <p>
+
+  <!-- <div class='container'> -->
+  
+  <!-- </div> -->
+  <h5>{{ story.story_name }}</h5>
+  <!-- <input type="text" name="country" value="{{ company.comp_name }}" hidden><br> -->
+  <h5>{{ story.description }}</h5>
+  <h5>CURRENT VIEWINGS-{{ story.current_view }}</h5>
+  <h5>TOTAL READ BY {{ story.total_read }} READERS</h5>
+  {{ form.story_name }}
+  </p>
+
+  <input type="submit" class="waves-effect waves-light btn modal-trigger" value="DONE THIS STORY">
+  </div>
+   
+  </div>
+  </section>
+  </form>  {% endcomment %}
+
+
+
+
+<form action="{% url 'count_reader' story.story_id %}" method="post"> 
+
+  {% csrf_token %}
+
+<main id="main">
+  <p class="p-title">STORY HEAD
+  <br>
+  <div id="text">
+  <h5 id="text">CURRENT VIEWINGS-{{ story.current_view.count }}</h5>
+  <h5>TOTAL READ BY {{ story.total_read.count }} READERS</h5>
+  </div>
+ </p>
+ <p>When you are done reading, press 'DONE' </p>
+ <button type="submit" class="btn btn-primary black" value="{{ story.story_id }}">DONE</button>
+    <h1 id="title">{{ story.story_name }}</h1>
+    
+<section id="tribute-info">
+    <div class="p1">
+      <p><span>
+      {{ story.description }}</p>
+    </div>
+  
+  
+</section>
+</main>
+
+ </form> 
+  
+
+  <script>
+let counter=1;
+ele=getElementbyId("viewings")
+setInterval(()=>{
+  document.querySelector("ele").innerText=counter;
+  counter++;
+  if(counter>5)location.reload();
+
+},1000);
+
+  </script>
+  
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+  
+
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

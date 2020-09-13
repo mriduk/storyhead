@@ -1,0 +1,227 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie Flower">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <style>
+      
+    body {
+    animation: fadeOut 2s;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: rgb(255, 98, 70);
+    background: url("https://papers.co/wallpaper/papers.co-vk55-android-lollipop-material-design-pattern-36-3840x2400-4k-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 760px;
+}
+
+#content {
+    margin-top:120px;
+    margin-bottom: 120px;
+    align-content: center;
+    justify-content: center;
+}
+#card2{
+   width: 300px;
+    height: 500px;
+     align-content: center;
+    justify-content: center;
+    display: flex;
+    position:left;
+
+}
+#card {
+    display: flex;
+    width: 500px;
+    min-height: 500px;
+    background: rgb(255, 255, 255);
+    border: 10pt;
+    border-radius: 8pt;
+    align-content: center;
+    justify-content: center;
+    
+
+}
+#dp {
+    background: url("https://raw.githubusercontent.com/znapci/znapci.github.io/master/images/android.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    border:10px;
+    border-radius: 00px;
+    position: absolute;
+}
+
+#text {
+    position: relative;
+    max-width: 180px;
+    font-size: 30px;
+    font-family: "Indie Flower";
+    text-align: center;
+    top: 300px;
+}
+#links {
+    display: inline-flex;
+    position: absolute;
+    top: 580px;
+}
+.link {
+    height: 28px; 
+    width: 28px;
+    margin: 4px;
+}
+.link:hover {
+    animation: fadeIn 0.7s;
+}
+#first {
+    background: url("https://image.flaticon.com/icons/svg/733/733609.svg");
+    background-size: cover;
+    margin: 10px;
+
+}
+#second {
+    background: url("https://image.flaticon.com/icons/svg/2111/2111341.svg");
+    background-size: cover;
+    margin: 10px;
+}
+#third {
+    background: url("https://image.flaticon.com/icons/svg/2089/2089181.svg");
+    background-size: cover;
+    margin: 10px;
+}
+@keyframes fadeIn {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ } 
+ @keyframes fadeOut {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+
+
+
+      </style>
+
+
+<title>
+STORYHEAD
+</title>
+
+</head>
+<body>
+
+
+
+
+
+
+
+<div class="container">
+
+{% if user.is_authenticated %}
+<a class="btn btn-primary black" href="{% url 'logout' %}" role="button">LOG OUT</a>
+
+
+<div class="container my-5">
+
+
+
+  <div class="text-center mb-5">
+  <h1 class="text-capitalize font-weight-bold" style="color: white;">Story <span style="color: #9B5DE5;">Section</span></h1>
+  </div>
+   </div>
+
+   {% comment %} {% if stories_list %} {% endcomment %}
+
+
+
+  
+
+          {% for story in stories_list %}
+
+
+
+<ul class="list-group list-group-flush">
+  <li id="textbox" class="list-group-item"><a  href="{% url 'story_details' story.story_id %}">{{ story.story_name }}</li>
+ 
+</ul>
+
+
+
+
+
+
+
+
+  {% comment %} <div class="col-md-8 mb-4 mx-auto">
+    <div class="d-sm-flex align-items-center justify-content-between">
+      <div class="d-sm-flex align-items-center">
+                <div class="mb-3 mb-sm-0">
+          <p class="font-weight-bold mb-0"><a href="{% url 'story_details' story.story_id %}">{{ story.story_name }}</p>
+
+        </div>
+      </div>
+     
+    </div> {% endcomment %}
+    
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+
+ {% else %}
+
+ 
+<div id="content">
+    <div id="card">
+        <div id="dp">
+        </div>
+        <div id="textbox">
+            <div id="text">Hi! Welcome to Storyhead </div>
+        </div>
+        
+        <div id="links">
+         <div class="container">
+ <a class="btn btn-primary black" href="{% url 'login' %}" role="button">LOG IN</a>
+ <a class="btn btn-primary pink" href="{% url 'sign_up' %}" role="button">SIGN UP</a>
+</div>
+</div>
+</div>
+</div>
+{% endif %} 
+</div>
+
+
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
